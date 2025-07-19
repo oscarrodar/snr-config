@@ -1,0 +1,70 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Finance (Debug)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/bin/Debug/net8.0/Microsoft.Search.Frontend.AnswerServices.Finance.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "preLaunchTask": "build-finance"
+        },
+        {
+            "name": "Launch Finance (Release)",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/bin/Release/net8.0/Microsoft.Search.Frontend.AnswerServices.Finance.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "preLaunchTask": "build-finance-release"
+        },        {
+            "name": "Attach to Process",
+            "type": "coreclr",
+            "request": "attach",
+            "justMyCode": false,
+            "enableStepFiltering": false,
+            "requireExactSource": false,
+            "sourceFileMap": {
+                "/q/src/snrcode/private/frontend/Answers/services/Finance/src/": "${workspaceFolder}/src/",
+                "/q/src/snrcode/private/frontend/Answers/services/Finance/": "${workspaceFolder}/",
+                "q:\\src\\snrcode\\private\\frontend\\Answers\\services\\Finance\\src\\": "${workspaceFolder}/src/",
+                "q:\\src\\snrcode\\private\\frontend\\Answers\\services\\Finance\\": "${workspaceFolder}/",
+                "Q:\\src\\snrcode\\private\\frontend\\Answers\\services\\Finance\\src\\": "${workspaceFolder}/src/",
+                "Q:\\src\\snrcode\\private\\frontend\\Answers\\services\\Finance\\": "${workspaceFolder}/",
+                "q:/src/snrcode/private/frontend/Answers/services/Finance/src/": "${workspaceFolder}/src/",
+                "q:/src/snrcode/private/frontend/Answers/services/Finance/": "${workspaceFolder}/",
+                "Q:/src/snrcode/private/frontend/Answers/services/Finance/src/": "${workspaceFolder}/src/",
+                "Q:/src/snrcode/private/frontend/Answers/services/Finance/": "${workspaceFolder}/"
+            },
+            "symbolOptions": {
+                "searchPaths": [
+                    "${workspaceFolder}/src/bin/Debug/net8.0",
+                    "${workspaceFolder}/src/bin/Release/net8.0",
+                    "${workspaceFolder}/src"
+                ],
+                "searchMicrosoftSymbolServer": false,
+                "searchNuGetOrgSymbolServer": false
+            }
+        },
+        {
+            "name": "Debug Tests",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "dotnet",
+            "args": [
+                "test",
+                "${workspaceFolder}/Test/Finance.Tests.csproj",
+                "--logger:console;verbosity=detailed"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "preLaunchTask": "build-tests"
+        }
+    ]
+}
